@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Avatar from "../components/Avatar";
+import {BeakerIcon, ViewGridIcon} from '@heroicons/react/solid'
 
 export default function Home() {
   return (
@@ -24,12 +25,11 @@ export default function Home() {
                 <p className="link">Images</p>
 
 
+                <ViewGridIcon className="h-10 w-10 p-2"/>
+
             {/*    icon */}
 
-                <Avatar />
-
-
-
+                <Avatar className="h-10" />
 
             {/*    avatar*/}
 
