@@ -25,7 +25,7 @@ export default function Home() {
                 <p className="link">Images</p>
 
 
-                <ViewGridIcon className="h-10 w-10 p-2"/>
+                <ViewGridIcon className="h-10 w-10 p-2 rounded-full"/>
 
             {/*    icon */}
 
