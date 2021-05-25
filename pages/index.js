@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Avatar from "../components/Avatar";
 
 export default function Home() {
   return (
@@ -14,18 +15,25 @@ export default function Home() {
             <div className="flex space-x-4 items-center">
             {/*    left*/}
                 <p className="link">About</p>
-                <p>Store</p>
+                <p  className="link">Store</p>
             </div>
 
             <div className="flex space-x-4 items-center">
             {/*    right*/}
-                <p>Gmail</p>
-                <p>Images</p>
+                <p className="link">Gmail</p>
+                <p className="link">Images</p>
 
 
             {/*    icon */}
 
+                <Avatar />
+
+
+
+
             {/*    avatar*/}
+
+
             </div>
         </header>
     {/*    Body */}
