@@ -1,4 +1,5 @@
 import React from 'react';
+import PaginationButtons from "./PaginationButtons";
 
 const SearchResults = ({results}) => {
     return (
@@ -20,6 +21,8 @@ const SearchResults = ({results}) => {
                     <p className="line-clamp-2">{result.snippet}</p>
                 </div>
             ))}
+
+            <PaginationButtons />
         </div>
     );
 };
