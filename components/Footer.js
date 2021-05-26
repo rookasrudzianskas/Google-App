@@ -5,6 +5,10 @@ const Footer = () => {
     return (
         <footer className="">
 
+            <div>
+                <p>United States</p>
+            </div>
+
         </footer>
     );
 };
