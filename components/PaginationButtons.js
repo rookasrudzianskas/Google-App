@@ -11,11 +11,11 @@ const PaginationButtons = () => {
     const startIndex = Number(router.query.start) || 0;
 
     return (
-        <div>
+        <div className="flex justify-space-between text-blue-700 mb-10 max-w-lg">
             {startIndex >= 10 && (
                 <Link href={`/search?term=${router.query.term}&start=${startIndex - 10}`}>
-                    <div>
-                        <ChevronLeftIcon />
+                    <div className="flex flex-grow flex-col items-center cursor-pointer hover:underline">
+                        <ChevronLeftIcon className="h-5" />
                         <p>Previous</p>
                     </div>
                 </Link>
@@ -23,8 +23,8 @@ const PaginationButtons = () => {
 
             {/* go to the searcg?term = and search term is the same, but just start indext, changes, adds + 10*/}
             <Link href={`/search?term=${router.query.term}&start=${startIndex + 10}`}>
-                <div>
-                    <ChevronRightIcon />
+                <div className="flex flex-grow flex-col items-center cursor-pointer hover:underline">
+                    <ChevronRightIcon className="h-5" />
                     <p>Next</p>
                 </div>
             </Link>

@@ -27,10 +27,11 @@ export default Search;
 
 export async function getServerSideProps(context) {
     // getting data from object
-    const useDummyData = true;
+    const useDummyData = false;
     const startIndex = context.query.start || "0";
 
     // forming request url
+    // here we get all the results from 0, in pagination buttons we increase and change the pages
     const data = useDummyData ? response :  await fetch(`https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT_KEY}&q=${context.query.term}&start=${startIndex}`).then(response => response.json());
     // alll of this stuff is in server working
     // pass the results to the front end
