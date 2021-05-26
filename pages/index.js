@@ -5,10 +5,29 @@ import Image from "next/image";
 import {SearchIcon} from "@heroicons/react/outline";
 import { MicrophoneIcon } from "@heroicons/react/solid";
 import Footer from "../components/Footer";
-
+import {useRef} from "react";
+import {useRouter} from "next/router";
 
 
 export default function Home() {
+
+    const searchInputRef = useRef(null);
+    const router = useRouter();
+
+    const search = e => {
+        e.preventDefault();
+        const term = searchInputRef.current.value;
+
+        if(!term) {
+            return;
+        }
+
+        router.push(`/search?term=${term}`);
+
+
+
+
+    }
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <Head>
@@ -56,6 +75,7 @@ export default function Home() {
             >
                 <SearchIcon className="h-5 mr-3 text-gray-500" />
                 <input
+                    ref={searchInputRef}
                     type="text"
                     className="flex-grow focus:outline-none "
                 />
@@ -63,8 +83,8 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col w-1/2 space-y-2 justify-center mt-8 sm:space-y-0 sm:flex-row sm: space-x-4">
-                <button className="btn">Google Search</button>
-                <button className="btn">I'm feeling Lucky</button>
+                <button onClick={search} className="btn">Google Search</button>
+                <button onClick={search} className="btn">I'm feeling Lucky</button>
             </div>
         </form>
 
